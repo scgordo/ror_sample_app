@@ -1,0 +1,15 @@
+<h1 style="text-align:left;"><%= @contact.first_name + " " + @contact.last_name %></h1>
+
+<strong>First name: </strong><%= @contact.first_name %><br>
+<strong>Last name: </strong><%= @contact.last_name %><br>
+<strong>Email: </strong><%= @contact.email %><br>
+<strong>Phone number: </strong><%= @contact.phone_number %><br>
+<hr>
+<br>
+
+<%= link_to "Back to Contacts", '/contacts' , class: "btn btn-sm btn-info" %>
+
+<%= link_to "Delete", "#{@contact.id}", 
+    method:  :delete,
+    class: "btn btn-sm btn-danger pull-right"
+%>

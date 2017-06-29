@@ -1,0 +1,9 @@
+<%= form_for(@movie) do |f| %>
+	Movie title: <%= f.text_field :title %><br>
+	Genre: <%= f.select :genre, [['- select a genre -', ''],
+['Action', 'action'], ['Comedy', 'comedy'], ['Documentary', 'documentary']] %><br>
+	Year release: <%= f.text_field :year_released %><br>
+	More info url: <%= f.text_field :info_url %>
+	<br><br> 
+	<%= f.submit "Save Movie", class: "btn btn-sm btn-primary" %>
+  <% end %>

@@ -1,0 +1,16 @@
+<h1>Actors</h1>
+<%= link_to "Enter New Actor", "/actors/new", class: "btn btn-sm btn-primary" %>
+
+
+<% @actors.each do |actor| %>
+  <hr>
+   <%= link_to "Edit", "actors/#{actor.id}/edit", class: "btn btn-sm btn-info pull-right" %>
+   <%= link_to "Show Details", "actors/#{actor.id}", class: "btn btn-sm btn-success pull-right" %>
+  <strong><%= link_to actor.name, "actors/#{actor.id}" %></strong>
+  <br>
+  <em><strong>Gender: </strong><%=actor.gender %></em>
+  <br>
+  <em><strong>Zodiac Sign: </strong><%=actor.zodiac %></em>
+  <br>
+  <small>Created at: <%= actor.created_at %></small>
+<% end %>

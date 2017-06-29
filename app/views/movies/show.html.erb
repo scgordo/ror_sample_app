@@ -1,0 +1,21 @@
+<h1 style="text-align:left;"><%= @movie.title%></h1>
+
+<% if @movie.genre.present? %>
+<strong>Genre: </strong><em><%= @movie.genre %></em><br>
+<% end %>
+
+<% if @movie.year_released.present? %>
+<strong>Year Released: </strong><em><%= @movie.year_released %></em><br>
+<% end %>
+
+<% if @movie.info_url.present? %>
+<strong>Additional Information: </strong>
+  <em><%= link_to "#{@movie.info_url}", "#{@movie.info_url}", :target => '_blank' %></em>
+<% end %>
+<hr>
+<%= link_to "Back to Movie Listings", movies_path , class: "btn btn-sm btn-info" %>
+
+<%= link_to "Delete", "#{@movie.id}", 
+    method:  :delete,
+    class: "btn btn-sm btn-danger pull-right"
+%>

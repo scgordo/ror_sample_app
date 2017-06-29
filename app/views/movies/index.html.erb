@@ -1,0 +1,24 @@
+<% 1980.upto(2017) do |year| %>
+  <%= link_to "#{year}", "/movies?year_released=#{year}" %> | 
+<% end %>
+<br><br>
+<% 'a'.upto('z') do |letter| %>
+  <%= link_to "#{letter}", "/movies?start=#{letter}" %> | 
+<% end %>
+
+<h1>Movies </h1>
+
+<%= link_to "Enter New Movie", "/movies/new", class: "btn btn-sm btn-primary" %><br>
+
+<% @movies.each do |movie| %>
+  <hr>
+  <strong><%= link_to movie.title, "movies/#{movie.id}" %></strong>
+  <%= link_to "Edit", "/movies/#{movie.id}/edit", class: "btn btn-sm btn-info pull-right" %>
+  <%= link_to "Show Details", "movies/#{movie.id}", class: "btn btn-sm btn-success pull-right" %>
+  
+  <br>
+  <em><%=movie.genre %></em>
+  <br>
+  <small>Created at: <%= movie.created_at %></small>
+
+<% end %>

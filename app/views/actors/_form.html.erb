@@ -1,0 +1,12 @@
+<%= form_for(@actor) do |f| %>
+	Actor Name: <%= f.text_field :name %>
+	<br>
+	Gender: <%= f.select :gender, [['- select a gender -', ''],
+ ['Male', 'male'], ['Female', 'female'], ['Unknown', 'unknown']] %><br>
+  Zodiac Sign: <%= f.select :zodiac, [['- select a sign -', ''],
+  ['Aries', 'aries'], ['Taurus', 'taurus'], ['Gemini', 'gemini'], ['Cancer', 'cancer'],
+   ['Leo', 'leo'], ['Virgo', 'virgo'], ['Libra', 'libra'], ['Scorpio', 'scorpio'],
+    ['Sagittarius', 'sagittarius'], ['Aquarius', 'aquarius'], ['Pisces', 'pisces']] %>
+	<br><br> 
+	<%= f.submit "Save Actor", class: "btn btn-sm btn-primary" %>
+  <% end %>

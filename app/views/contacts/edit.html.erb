@@ -1,0 +1,14 @@
+<h1>Edit Contact</h1>
+
+<div class="row">
+ <div class="col-md-6 col-md-offset-3">
+  <%= render partial: "form" %>
+ </div>
+</div>
+<hr><br>
+<div class="text-center">
+<%= link_to "Delete Contact", "#{@contact.id}", 
+    method:  :delete,
+    class: "btn btn-sm btn-danger text-center"
+%>
+</div>

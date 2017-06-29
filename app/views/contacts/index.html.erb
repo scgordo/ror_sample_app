@@ -1,0 +1,25 @@
+<h1>Rolodex of Contacts</h1>
+
+<%= link_to "Create a Contact", "/contacts/new", class: "btn btn-sm btn-primary" %><br><br>
+
+<%= form_tag(contacts_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Contacts by first name, last name, email, or phone number" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<br><br>
+
+<% @contacts.each do |contact| %>
+  <hr>
+  <strong><%= link_to contact.first_name + " " + contact.last_name, "contacts/#{contact.id}" %></strong>
+  <%= link_to "Edit", "/contacts/#{contact.id}/edit", class: "btn btn-sm btn-info pull-right" %>
+  <%= link_to "Show Details", "contacts/#{contact.id}", class: "btn btn-sm btn-success pull-right" %>
+  
+  <br>
+  <em><%= contact.email %></em>
+  <br>
+  <em><%= contact.phone_number %></em>
+  <br>
+  <small>Created at: <%= contact.created_at %></small>
+
+<% end %>
